@@ -65,6 +65,19 @@ public:
 		}
 		cout << "Указатель удален!" << endl;
 	}
+	SmartDoc<T1>& operator=(const SmartDoc<T1>& p)
+	{
+		if (StatPtr) {
+			StatPtr->Count--;
+			if (StatPtr->Count <= 0) {
+				delete StatPtr->RealPtr;
+				delete StatPtr;
+			}
+		}
+		StatPtr = p.StatPtr;
+		if (StatPtr) StatPtr->Count++;
+		return *this;
+	}
 };
 
 
