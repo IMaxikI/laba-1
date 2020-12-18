@@ -5,7 +5,7 @@
 
 using namespace std;
 int menu();
-string writeWords();
+
 
 template <class T>
 class Documentation {
@@ -16,7 +16,6 @@ public:
 		str = st;
 	}
 	void Show() {
-		cout << "Документация" << endl;
 		cout << str << endl;
 	}
 	void Change(T st) {
@@ -27,12 +26,9 @@ public:
 	}
 	~Documentation()
 	{
-		cout << "Объект удален!" << endl;
+		cout << "РћР±СЉРµРєС‚ СѓРґР°Р»РµРЅ!" << endl;
 	}
 };
-
-
-
 
 template <class T1>
 struct Status {
@@ -67,7 +63,7 @@ public:
 				delete StatPtr;
 			}
 		}
-		cout << "Указатель удален" << endl;
+		cout << "РЈРєР°Р·Р°С‚РµР»СЊ СѓРґР°Р»РµРЅ!" << endl;
 	}
 };
 
@@ -83,30 +79,30 @@ void main() {
 		switch (menu())
 		{
 		case 0:
-			cout << "Введите текст:";
-			str = writeWords();
+			cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚:";
+			cin >> str;
 			pt1->Change(str);
 			break;
 		case 1:
-			cout << "Введите текст:";
-			str = writeWords();
+			cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚:";
+			cin >> str;
 			pt2->Change(str);
 			break;
 		case 2:
-			cout << "\t1 Документация" << endl;
+			cout << "\t1 Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ" << endl;
 			pt1->Show();
-			cout << "\t2 Документация" << endl;
+			cout << "\t2 Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ" << endl;
 			pt2->Show();
 			system("pause");
 			break;
 		case 3:
-			cout << "Введите текст, который хотите добавить:";
-			str = writeWords();
+			cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚, РєРѕС‚РѕСЂС‹Р№ С…РѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ:";
+			cin >> str;
 			pt1->AddDoc(str);
 			break;
 		case 4:
-			cout << "Введите текст, который хотите добавить:";
-			str = writeWords();
+			cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚, РєРѕС‚РѕСЂС‹Р№ С…РѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ:";
+			cin >> str;
 			pt2->AddDoc(str);
 			break;
 		case 5:
@@ -114,7 +110,6 @@ void main() {
 		}
 	}
 }
-
 
 int menu()
 {
@@ -124,23 +119,23 @@ int menu()
 	{
 		choiceButton = (choiceButton + 6) % 6;
 
-		if (choiceButton == 0) cout << " -> Изменение первой документации" << endl;
-		else cout << " Изменение первой документации" << endl;
+		if (choiceButton == 0) cout << " -> РР·РјРµРЅРµРЅРёРµ РїРµСЂРІРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
+		else cout << " РР·РјРµРЅРµРЅРёРµ РїРµСЂРІРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
 
-		if (choiceButton == 1) cout << " -> Изменение второй документации" << endl;
-		else cout << " Изменение второй документации" << endl;
+		if (choiceButton == 1) cout << " -> РР·РјРµРЅРµРЅРёРµ РІС‚РѕСЂРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
+		else cout << " РР·РјРµРЅРµРЅРёРµ РІС‚РѕСЂРѕР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
 
-		if (choiceButton == 2) cout << " -> Просмотр всей документации" << endl;
-		else cout << " Просмотр всей документации" << endl;
+		if (choiceButton == 2) cout << " -> РџСЂРѕСЃРјРѕС‚СЂ РІСЃРµР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
+		else cout << " РџСЂРѕСЃРјРѕС‚СЂ РІСЃРµР№ РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
 
-		if (choiceButton == 3) cout << " -> Добавить текст к 1 документации" << endl;
-		else cout << " Добавить текст к 1 документации" << endl;
+		if (choiceButton == 3) cout << " -> Р”РѕР±Р°РІРёС‚СЊ С‚РµРєСЃС‚ Рє 1 РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
+		else cout << " Р”РѕР±Р°РІРёС‚СЊ С‚РµРєСЃС‚ Рє 1 РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
 
-		if (choiceButton == 4) cout << " -> Добавить текст к 2 документации" << endl;
-		else cout << " Добавить текст к 2 документации" << endl;
+		if (choiceButton == 4) cout << " -> Р”РѕР±Р°РІРёС‚СЊ С‚РµРєСЃС‚ Рє 2 РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
+		else cout << " Р”РѕР±Р°РІРёС‚СЊ С‚РµРєСЃС‚ Рє 2 РґРѕРєСѓРјРµРЅС‚Р°С†РёРё" << endl;
 
-		if (choiceButton == 5) cout << " -> Сформировать документацию и выйти" << endl;
-		else cout << " Сформировать документацию и выйти" << endl;
+		if (choiceButton == 5) cout << " -> РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚Р°С†РёСЋ Рё РІС‹Р№С‚Рё" << endl;
+		else cout << " РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊ РґРѕРєСѓРјРµРЅС‚Р°С†РёСЋ Рё РІС‹Р№С‚Рё" << endl;
 
 		button = _getch();
 		if (button == 224)
@@ -155,30 +150,4 @@ int menu()
 		}
 		system("cls");
 	}
-}
-
-string writeWords() {
-	string word;
-	int Knopka;
-	char simvol;
-	while (true) {
-		Knopka = _getch();
-		if (Knopka == 8) {
-			if (word.length() != 0) {
-				cout << '\b' << " " << '\b';
-				word.erase(word.length() - 1);
-			}
-		}
-		else
-			if (Knopka == 13 && word.length() != 0) break;
-			else {
-				simvol = (char)Knopka;
-				if ((simvol >= 'а' && simvol <= 'я') || (simvol >= 'А' && simvol <= 'Я') || simvol == ' ') {
-					word = word + simvol;
-					cout << simvol;
-				}
-			}
-	}
-	cout << endl;
-	return word;
 }
