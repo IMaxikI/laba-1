@@ -74,6 +74,8 @@ void main() {
 	SetConsoleOutputCP(1251);
 	SmartDoc<Documentation<string>> pt1(new Documentation<string>);
 	SmartDoc<Documentation<string>> pt2(new Documentation<string>);
+	SmartDoc<Documentation<string>> pt3 = pt1;
+	SmartDoc<Documentation<string>> pt4 = pt2;
 	string str;
 	while (true) {
 		switch (menu())
@@ -81,29 +83,29 @@ void main() {
 		case 0:
 			cout << "Введите текст:";
 			cin >> str;
-			pt1->Change(str);
+			pt3->Change(str);
 			break;
 		case 1:
 			cout << "Введите текст:";
 			cin >> str;
-			pt2->Change(str);
+			pt4->Change(str);
 			break;
 		case 2:
 			cout << "\t1 Документация" << endl;
-			pt1->Show();
+			pt3->Show();
 			cout << "\t2 Документация" << endl;
-			pt2->Show();
+			pt4->Show();
 			system("pause");
 			break;
 		case 3:
 			cout << "Введите текст, который хотите добавить:";
 			cin >> str;
-			pt1->AddDoc(str);
+			pt3->AddDoc(str);
 			break;
 		case 4:
 			cout << "Введите текст, который хотите добавить:";
 			cin >> str;
-			pt2->AddDoc(str);
+			pt4->AddDoc(str);
 			break;
 		case 5:
 			return;
